@@ -1,0 +1,14 @@
+USE Project_DB;
+
+CREATE TABLE login_details(
+S_no INT IDENTITY(1,1),
+Name VARCHAR(100) PRIMARY KEY,
+Pass_word VARCHAR(100),
+pass_word_question VARCHAR(250),
+answer VARCHAR(100));
+
+CREATE TABLE pass_word_table(
+S_no INT PRIMARY KEY IDENTITY(1,1),
+Website VARCHAR(100),
+Pass_word VARCHAR(100),
+Name VARCHAR(100) FOREIGN KEY REFERENCES login_details(Name));
